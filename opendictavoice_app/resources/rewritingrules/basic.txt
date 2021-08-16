@@ -1,3 +1,36 @@
 comma -> ,
 point -> .
+bracket left -> [
+bracket right -> ]
+brace right -> }
+brace left -> {
+paren left -> (
+paren right -> )
+single quote -> '
+double quote -> "
+symbol percent -> %
+symbol dollar -> $
+symbol exclaim -> !
+symbol at -> @
+symbol carrot -> ^
+symbol and -> &
+symbol star -> *
+symbol minus -> -
+symbol plus -> +
+symbol Plus -> +
+symbol equal -> =
+symbol under score -> _
+symbol underscore -> _
+symbol back slash -> \
+symbol forward slash -> /
+symbol less than -> <
+symbol less -> <
+symbol greater than -> >
+symbol greater -> >
+symbol pipe -> |
+tilde -> ~
+bactec -> `
+backtick -> `
 
+key-rite -> key right
+key for Word -> key forward
