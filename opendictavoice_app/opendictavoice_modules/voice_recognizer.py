@@ -5,7 +5,7 @@ import speech_recognition
 class Voice_Recognizer:
 
     #by default the language is french
-    def __init__(self, p_language='fr-FR'):
+    def __init__(self, p_language='en-US'):
         self._language = p_language
 
     #input: p_wavpath is the path to a .wav file

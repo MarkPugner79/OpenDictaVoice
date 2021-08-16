@@ -131,7 +131,7 @@ class Builded_GUI:
         """
         choices = { 'fr','en'}
         language_stringvar = tkinter.StringVar(self._window)
-        language_stringvar.set('fr')
+        language_stringvar.set('en')
         ret_menu = tkinter.OptionMenu(self._window, language_stringvar, *choices)
         ret_menu.language_stringvar = language_stringvar
         return ret_menu

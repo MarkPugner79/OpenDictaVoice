@@ -65,8 +65,52 @@ class Main_App():
                 print("text formatted: " + formated_text)
                 print("(I put it in your editor)")
                 print('=========================\n\n')
-
-                pynput.keyboard.Controller().type(formated_text)
+                # if it contains "key " do a keypress instead of typing so we can do key up down etc
+                if "key " in formated_text:
+                    print("Should do a key press instead of typing the message")
+                    # split the command into parts and get th second part 
+                    parts = formated_text.split(' ')
+                    if len(parts) > 1 :
+                        print("Should press key: ", parts[1])
+                        if 'up' in parts[1]:
+                            pynput.keyboard.Controller().press(pynput.keyboard.Key.up)
+                            pynput.keyboard.Controller().release(pynput.keyboard.Key.up)
+                        if 'down' in parts[1]:
+                            pynput.keyboard.Controller().press(pynput.keyboard.Key.down)
+                            pynput.keyboard.Controller().release(pynput.keyboard.Key.down)
+                        if 'left' in parts[1]:
+                            pynput.keyboard.Controller().press(pynput.keyboard.Key.left)
+                            pynput.keyboard.Controller().release(pynput.keyboard.Key.left)
+                        # wants to type key-rite ....
+                        if 'right' in parts[1]:
+                            pynput.keyboard.Controller().press(pynput.keyboard.Key.right)
+                            pynput.keyboard.Controller().release(pynput.keyboard.Key.right)
+                        # home
+                        if 'home' in parts[1]:
+                            pynput.keyboard.Controller().press(pynput.keyboard.Key.home)
+                            pynput.keyboard.Controller().release(pynput.keyboard.Key.home)
+                        # end
+                        if 'end' in parts[1]:
+                            pynput.keyboard.Controller().press(pynput.keyboard.Key.end)
+                            pynput.keyboard.Controller().release(pynput.keyboard.Key.end)
+                        # enter
+                        if 'enter' in parts[1]:
+                            pynput.keyboard.Controller().press(pynput.keyboard.Key.enter)
+                            pynput.keyboard.Controller().release(pynput.keyboard.Key.enter)
+                        # control + left
+                        if 'back' in parts[1]:
+                            pynput.keyboard.Controller().press(pynput.keyboard.Key.ctrl)
+                            pynput.keyboard.Controller().press(pynput.keyboard.Key.left)
+                            pynput.keyboard.Controller().release(pynput.keyboard.Key.left)
+                            pynput.keyboard.Controller().release(pynput.keyboard.Key.ctrl)
+                        # control + right
+                        if 'forward' in parts[1]:
+                            pynput.keyboard.Controller().press(pynput.keyboard.Key.ctrl)
+                            pynput.keyboard.Controller().press(pynput.keyboard.Key.right)
+                            pynput.keyboard.Controller().release(pynput.keyboard.Key.right)
+                            pynput.keyboard.Controller().release(pynput.keyboard.Key.ctrl)
+                else:
+                    pynput.keyboard.Controller().type(formated_text)
                 self.fifo.remove_process(dict_process['id'])
 
             else:
